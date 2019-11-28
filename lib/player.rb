@@ -8,10 +8,6 @@ class Player
     @hp = hp
   end
 
-  def attack(other_player)
-    other_player.reduce_hp(10)
-  end
-
   def reduce_hp(amount)
     @hp -= amount
   end
