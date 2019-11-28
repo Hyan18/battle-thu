@@ -24,8 +24,6 @@ class Battle < Sinatra::Base
     end
 
     post '/attack' do
-        @player_1_name = $player_1.name
-        @player_2_name = $player_2.name
         $player_1.attack($player_2)
         session[:message] = "Successful attack!"
         redirect '/play'
