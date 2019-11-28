@@ -18,12 +18,13 @@ class Battle < Sinatra::Base
     get '/play' do
         @player_1_name = $game.player_1.name
         @player_2_name = $game.player_2.name
+        @player_1_hp = $game.player_1.hp
         @player_2_hp = $game.player_2.hp
         erb(:play)
     end
 
     post '/attack' do
-        $game.attack($game.player_2)
+        $game.attack
         session[:message] = "Successful attack!"
         redirect '/play'
     end

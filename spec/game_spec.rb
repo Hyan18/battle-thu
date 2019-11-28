@@ -11,7 +11,7 @@ describe Game do
   describe "#attack" do
     it "should reduce hp when attacked" do
       expect( player_2 ).to receive( :reduce_hp ).with 10
-      game.attack(player_2)
+      game.attack
     end
   end
 end
